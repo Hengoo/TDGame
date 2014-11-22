@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0DF107E1-96FE-4D73-A452-2F2E34EBA277}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TDGame</RootNamespace>
+    <AssemblyName>TDGame</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\TDGame.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\TDGame.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dynamisch\KarteD.cs" />
+    <Compile Include="Dynamisch\Kugel.cs" />
+    <Compile Include="Dynamisch\TurmD.cs" />
+    <Compile Include="Dynamisch\VerbesserungenKugel\KugelBezier.cs" />
+    <Compile Include="Dynamisch\VerbesserungenTurmD\TurmDS.cs" />
+    <Compile Include="Dynamisch\VerbesserungenTurmD\TurmDST.cs" />
+    <Compile Include="Dynamisch\VerbesserungenTurmD\TurmDSW.cs" />
+    <Compile Include="Dynamisch\VerbesserungenTurmD\TurmDTS.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Kommunikation\BinaryWriterCollection.cs" />
+    <Compile Include="Kommunikation\Client.cs" />
+    <Compile Include="Kommunikation\LockedBinaryWriter.cs" />
+    <Compile Include="Kommunikation\Server.cs" />
+    <Compile Include="Kommunikation\UDPMulticast.cs" />
+    <Compile Include="Kommunikation\Verwaltung.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Statisch\Block.cs" />
+    <Compile Include="Statisch\KarteS.cs" />
+    <Compile Include="Statisch\Verbesserungen\Basis.cs" />
+    <Compile Include="Statisch\Verbesserungen\Berg.cs" />
+    <Compile Include="Statisch\Verbesserungen\Spezial.cs" />
+    <Compile Include="Statisch\Verbesserungen\SpezialS.cs" />
+    <Compile Include="Statisch\Verbesserungen\SpezialT.cs" />
+    <Compile Include="Statisch\Verbesserungen\SpezialW.cs" />
+    <Compile Include="Statisch\Verbesserungen\Turm.cs" />
+    <Compile Include="Statisch\Verbesserungen\TurmS.cs" />
+    <Compile Include="Statisch\Verbesserungen\TurmT.cs" />
+    <Compile Include="Statisch\Verbesserungen\TurmW.cs" />
+    <Compile Include="Statisch\Verbesserungen\Wall.cs" />
+    <Compile Include="Statisch\Verbesserungen\WallS.cs" />
+    <Compile Include="Statisch\Verbesserungen\WallT.cs" />
+    <Compile Include="Statisch\Verbesserungen\WallW.cs" />
+    <Compile Include="Zeichenklasse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Berg.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ausgewählt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wall.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testtest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Turm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grass10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wall3d.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnergieKugel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TurmT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spezial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TurmW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wall3d2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hudtest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HudHintergrund.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bezier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angriff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GausKannone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AngriffsSpeedTurm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angriffsspeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basis.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <None Include="Resources\SchildTurm.png" />
+    <None Include="Resources\WallS.bmp" />
+    <None Include="Resources\SchildKugel.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
