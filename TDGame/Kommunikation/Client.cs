@@ -159,8 +159,6 @@ namespace TDGame.Kommunikation
         /// </summary>
         public void Verbinden(String adresse, int port)
         {
-            IPAddress ip = IPAddress.Parse(adresse);
-
             if (tcpclient != null)
             {
                 tcpclient.Close();
@@ -169,7 +167,7 @@ namespace TDGame.Kommunikation
 
             try
             {
-                tcpclient.Connect(ip, port);
+                tcpclient.Connect(adresse, port);
             }
             catch (Exception)
             {
