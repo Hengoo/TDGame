@@ -60,7 +60,8 @@
             this.port.Name = "port";
             this.port.Size = new System.Drawing.Size(100, 20);
             this.port.TabIndex = 6;
-            this.port.Text = "1337";
+            this.port.Text = "13337";
+            this.port.TextChanged += new System.EventHandler(this.port_TextChanged);
             // 
             // ip
             // 
@@ -128,7 +129,7 @@
             this.zeichenfenster.MouseDown += new System.Windows.Forms.MouseEventHandler(this.zeichenfenster_MouseDown);
             this.zeichenfenster.MouseUp += new System.Windows.Forms.MouseEventHandler(this.zeichenfenster_MouseUp_1);
             // 
-            // Form1
+            // ClientForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1200, 800);
@@ -137,7 +138,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "ClientForm";
             this.Text = "TDGame";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.panel1.ResumeLayout(false);
