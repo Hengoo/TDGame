@@ -1018,10 +1018,5 @@ namespace TDGame
             {
             }
         }
-
-        private void port_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

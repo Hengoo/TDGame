@@ -61,7 +61,6 @@
             this.port.Size = new System.Drawing.Size(100, 20);
             this.port.TabIndex = 6;
             this.port.Text = "13337";
-            this.port.TextChanged += new System.EventHandler(this.port_TextChanged);
             // 
             // ip
             // 
