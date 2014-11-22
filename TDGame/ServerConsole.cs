@@ -178,7 +178,7 @@ namespace TDGame
 						server.schreiben(strb2.ToString());
 					}
 
-					if (zeit == 40)  //Dies und die zahl weiter unten ändern damit der Kampf früher anfängt. Bin leider nicht mehr dazu gekommen einen Bereit Button zu implementieren
+					if (zeit == 150)  //Dies und die zahl weiter unten ändern damit der Kampf früher anfängt. Bin leider nicht mehr dazu gekommen einen Bereit Button zu implementieren
 					{
 						StringBuilder strb = new StringBuilder();
 						baumodus = false;
@@ -186,7 +186,7 @@ namespace TDGame
 						strb.Append((char)(Befehlstyp.zielmodus));
 						server.schreiben(strb.ToString());
 					}
-					if (zeit == 42)//diese zahl hier
+					if (zeit == 180)//diese zahl hier
 					{
 						StringBuilder strb = new StringBuilder();
 						zielmodus = false;
