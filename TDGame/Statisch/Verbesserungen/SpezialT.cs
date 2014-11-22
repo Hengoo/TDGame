@@ -6,35 +6,42 @@ using System.Drawing;
 
 namespace TDGame.Statisch.Verbesserungen
 {
-    /// <summary>
-    /// Turm Verbesserung des Spezial TUrms, Projektile erhöhen die Angriffsgeschwindigkeit.
-    /// </summary>
-    class SpezialT : Block
-    {
-        public SpezialT(Point neueKoordinaten, Spieler neuSpieler, int neueschadenverbesserung, int neuehpverbesserung, int neuespezialverbesserung)
-            : base(neueKoordinaten, neuSpieler, neueschadenverbesserung, neuehpverbesserung, neuespezialverbesserung)
-        {
-        }
+	/// <summary>
+	/// Turm Verbesserung des Spezial TUrms, Projektile erhöhen die Angriffsgeschwindigkeit.
+	/// </summary>
+	class SpezialT : Block
+	{
+		public SpezialT(Point neueKoordinaten, Spieler neuSpieler, int neueschadenverbesserung, int neuehpverbesserung, int neuespezialverbesserung)
+			: base(neueKoordinaten, neuSpieler, neueschadenverbesserung, neuehpverbesserung, neuespezialverbesserung)
+		{
+		}
 
-        public override Dynamisch.TurmD initialisieren()
-        {
-            hP = 70;
-            maxSchild = Global.standartSchild;
-            bild = new Bitmap(Properties.Resources.Wall);
-            if (koordinaten.X >= Global.feldgroesse)
-            {
-                bild.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            }
-            bildD = new Bitmap(Properties.Resources.AngriffsSpeedTurm);
-            turmD = new Dynamisch.VerbesserungenTurmD.TurmDST(koordinatenPixel, spieler);
-            turmD.initialisieren(0, 1, 50, 600, bildD, new Bitmap(Properties.Resources.Angriffsspeed));
-            statVerbesserungInitialisieren();
-            return turmD;
-        }
+		public override Dynamisch.TurmD initialisieren()
+		{
+			hP = 70;
+			maxSchild = Global.standartSchild;
+			turmD = new Dynamisch.VerbesserungenTurmD.TurmDST(koordinatenPixel, spieler);
+			if (!Program.isServer)
+			{
+				bild = new Bitmap(Properties.Resources.Wall);
+				if (koordinaten.X >= Global.feldgroesse)
+				{
+					bild.RotateFlip(RotateFlipType.RotateNoneFlipX);
+				}
+				bildD = new Bitmap(Properties.Resources.AngriffsSpeedTurm);
+				turmD.initialisieren(0, 1, 50, 600, bildD, new Bitmap(Properties.Resources.Angriffsspeed));
+			}
+			else
+			{
+				turmD.initialisieren(0, 1, 50, 600, bildD, null);
+			}
+			statVerbesserungInitialisieren();
+			return turmD;
+		}
 
-        public override Block verbessern(Typ verbesserungstyp)
-        {
-            return null;
-        }
-    }
+		public override Block verbessern(Typ verbesserungstyp)
+		{
+			return null;
+		}
+	}
 }

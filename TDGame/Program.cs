@@ -7,6 +7,7 @@ namespace TDGame
 {
 	static class Program
 	{
+		public static bool isServer;
 		/// <summary>
 		/// Der Haupteinstiegspunkt für die Anwendung.
 		/// </summary>
@@ -15,6 +16,7 @@ namespace TDGame
 		{
 			//Je nachdem welche Konfiguration gewählt ist, startet sich ServerForm oder der ClientForm
 #if RELEASE_CLIENT
+			isServer = false;
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new ClientForm());
@@ -22,6 +24,7 @@ namespace TDGame
 			Console.WriteLine("[------- Created by Hengo -------]");
 			Console.WriteLine("[----- TDGame Server DeluxE -----]");
 			Console.WriteLine("[------  Press 'Q' to quit ------]");
+			isServer = true;
 			ServerConsole sc = new ServerConsole();
 			while(Console.ReadKey().Key != ConsoleKey.Q);
 			sc.Close();
