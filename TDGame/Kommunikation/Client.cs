@@ -33,7 +33,7 @@ namespace TDGame.Kommunikation
         /// <summary>
         /// Objektreferenz zum Clienten
         /// </summary>
-        public Form1 form;
+        public ClientForm form;
         /// <summary>
         /// Thread für das Empfangen von Nachrichten.
         /// </summary>
@@ -43,7 +43,7 @@ namespace TDGame.Kommunikation
         /// Erstellt das Client objekt und initialisiert es
         /// </summary>
         /// <param name="neueform"></param>
-        public Client(Form1 neueform)
+        public Client(ClientForm neueform)
         {
             form = neueform;
             udpm = new UDPMulticast();

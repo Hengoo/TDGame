@@ -16,7 +16,7 @@ namespace TDGame
     /// <summary>
     /// Der Client der alles verwaltet und brechnet
     /// </summary>
-    public partial class Form1 : Form
+    public partial class ClientForm : Form
     {
         /// <summary>
         /// True wenn der baumodus an ist
@@ -134,7 +134,7 @@ namespace TDGame
         /// <summary>
         /// Erstellt und Initialisiert den Clienten und seine Attribute
         /// </summary>
-        public Form1()
+        public ClientForm()
         {
             karteStatisch = new Statisch.KarteS();
             karteDynamisch = new Dynamisch.KarteD();

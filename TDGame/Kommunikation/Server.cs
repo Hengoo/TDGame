@@ -49,7 +49,7 @@ namespace TDGame.Kommunikation
         /// <summary>
         /// Objektreferenz zu dem Server
         /// </summary>
-        public Form2 form;
+		public ServerConsole console;
         /// <summary>
         /// Gibt an ob bereits 2 Spieler mit dem server verbunden sind, wenn ja wird sie true und der Server wird nicht mehr in der Server-Such-Liste angezeit
         /// </summary>
@@ -59,9 +59,9 @@ namespace TDGame.Kommunikation
         /// Erstellt und initialisiert den Server
         /// </summary>
         /// <param name="neueform">Objektreferenz zu der Form</param>
-        public Server(Form2 neueform)
+        public Server(ServerConsole neueform)
         {
-            form = neueform;
+			console = neueform;
             con_list = new List<Verwaltung>();
             BWC = new BinaryWriterCollection(con_list);
             udpm = new UDPMulticast();
@@ -165,7 +165,7 @@ namespace TDGame.Kommunikation
                         {
                         }
 
-                        form.reset();
+						console.Reset();
                     }
                     return;
                 }
