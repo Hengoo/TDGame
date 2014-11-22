@@ -203,7 +203,7 @@ namespace TDGame.Statisch
 					{
 						hP = 0;
 						if (Program.isServer)
-							return false;
+							return true;
 					}
 					else
 						hP = (int)diffhp;
