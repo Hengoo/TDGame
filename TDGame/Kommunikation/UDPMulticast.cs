@@ -68,7 +68,7 @@ namespace TDGame.Kommunikation
 		/// <summary>Sucht nach einem freien Port auf dem Server geöffnet werden kann + öffnet ihn</summary>
 		private bool AnyConnect()
 		{
-			port = 1337;
+			port = 13337;
 			IPEndPoint anyEnd = new IPEndPoint(IPAddress.Any, port);
 			while (true)
 			{
