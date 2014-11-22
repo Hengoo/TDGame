@@ -123,9 +123,9 @@ namespace TDGame
 									{
 										StringBuilder strb3 = new StringBuilder();
 
-										karteStatisch.karteS[i, j] = new Statisch.Verbesserungen.Basis(new Point(i, j), Spieler.umgebung, 0, 0, 0);
+										karteStatisch.karteS[i, j] = new Statisch.Verbesserungen.Berg(new Point(i, j), Spieler.umgebung);
 										karteStatisch.karteS[i, j].initialisieren();
-										karteStatisch.karteS[Global.feldgroesse * 2 - 1 - i, j] = new Statisch.Verbesserungen.Basis(new Point(Global.feldgroesse * 2 - 1 - i, j), Spieler.spielerB, 0, 0, 0);
+										karteStatisch.karteS[Global.feldgroesse * 2 - 1 - i, j] = new Statisch.Verbesserungen.Berg(new Point(Global.feldgroesse * 2 - 1 - i, j), Spieler.umgebung);
 										karteStatisch.karteS[Global.feldgroesse * 2 - 1 - i, j].initialisieren();
 
 										strb3.Append((char)(Befehlstyp.bergBauen));
@@ -138,9 +138,9 @@ namespace TDGame
 								{
 									StringBuilder strb3 = new StringBuilder();
 
-									karteStatisch.karteS[i, j] = new Statisch.Verbesserungen.Basis(new Point(i, j), Spieler.umgebung, 0, 0, 0);
+									karteStatisch.karteS[i, j] = new Statisch.Verbesserungen.Berg(new Point(i, j), Spieler.umgebung);
 									karteStatisch.karteS[i, j].initialisieren();
-									karteStatisch.karteS[Global.feldgroesse * 2 - 1 - i, j] = new Statisch.Verbesserungen.Basis(new Point(Global.feldgroesse * 2 - 1 - i, j), Spieler.spielerB, 0, 0, 0);
+									karteStatisch.karteS[Global.feldgroesse * 2 - 1 - i, j] = new Statisch.Verbesserungen.Berg(new Point(Global.feldgroesse * 2 - 1 - i, j), Spieler.umgebung);
 									karteStatisch.karteS[Global.feldgroesse * 2 - 1 - i, j].initialisieren();
 
 									strb3.Append((char)(Befehlstyp.bergBauen));
@@ -152,9 +152,9 @@ namespace TDGame
 								{
 									StringBuilder strb3 = new StringBuilder();
 
-									karteStatisch.karteS[i, j] = new Statisch.Verbesserungen.Basis(new Point(i, j), Spieler.umgebung, 0, 0, 0);
+									karteStatisch.karteS[i, j] = new Statisch.Verbesserungen.Berg(new Point(i, j), Spieler.umgebung);
 									karteStatisch.karteS[i, j].initialisieren();
-									karteStatisch.karteS[Global.feldgroesse * 2 - 1 - i, j] = new Statisch.Verbesserungen.Basis(new Point(Global.feldgroesse * 2 - 1 - i, j), Spieler.spielerB, 0, 0, 0);
+									karteStatisch.karteS[Global.feldgroesse * 2 - 1 - i, j] = new Statisch.Verbesserungen.Berg(new Point(Global.feldgroesse * 2 - 1 - i, j), Spieler.umgebung);
 									karteStatisch.karteS[Global.feldgroesse * 2 - 1 - i, j].initialisieren();
 
 									strb3.Append((char)(Befehlstyp.bergBauen));
@@ -178,7 +178,7 @@ namespace TDGame
 						server.schreiben(strb2.ToString());
 					}
 
-					if (zeit == 150)  //Dies und die zahl weiter unten ändern damit der Kampf früher anfängt. Bin leider nicht mehr dazu gekommen einen Bereit Button zu implementieren
+					if (zeit == 40)  //Dies und die zahl weiter unten ändern damit der Kampf früher anfängt. Bin leider nicht mehr dazu gekommen einen Bereit Button zu implementieren
 					{
 						StringBuilder strb = new StringBuilder();
 						baumodus = false;
@@ -186,7 +186,7 @@ namespace TDGame
 						strb.Append((char)(Befehlstyp.zielmodus));
 						server.schreiben(strb.ToString());
 					}
-					if (zeit == 180)//diese zahl hier
+					if (zeit == 42)//diese zahl hier
 					{
 						StringBuilder strb = new StringBuilder();
 						zielmodus = false;
@@ -212,7 +212,6 @@ namespace TDGame
 				Dynamisch.Kugel kugel = karteDynamisch.karteKD[i];
 				if (kugel.naechsteKoordinaten().X < 1200 && kugel.naechsteKoordinaten().X > 0 && kugel.naechsteKoordinaten().Y > 0 && kugel.naechsteKoordinaten().Y < 600)//kugel auserhalt her überprüfen
 				{
-
 					if (karteStatisch.testeKollision(kugel.bewegen(), kugel.ursprungskoordinaten, kugel.spieler, kugel.projektil))
 					{
 						int xKugel = ((int)kugel.koordinaten.X) / Global.blockgroesse;

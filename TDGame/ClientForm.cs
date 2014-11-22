@@ -393,10 +393,7 @@ namespace TDGame
                     {
                         int xKugel = ((int)kugel.koordinaten.X) / Global.blockgroesse;
                         int yKugel = ((int)kugel.koordinaten.Y) / Global.blockgroesse;
-                        if (karteStatisch.karteS[xKugel, yKugel].schadenBekommen(kugel.schadenmachen(), kugel.projektil))//kugel macht momentan schaden aber töten nicht, client halt
-                        {
-                            //leer da nicht zerstört wird, jedoch der "nebeneffekt von schadenBekommenClient benötigt wird.
-                        }
+						karteStatisch.karteS[xKugel, yKugel].schadenBekommen(kugel.schadenmachen(), kugel.projektil);//kugel macht momentan schaden aber töten nicht, client halt
                         karteDynamisch.karteKD.RemoveAt(i);
                     }
                 }

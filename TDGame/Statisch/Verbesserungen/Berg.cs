@@ -19,6 +19,7 @@ namespace TDGame.Statisch.Verbesserungen
 		public Berg(Point neueKoordinaten, Spieler neuSpieler)
 			: base(neueKoordinaten, neuSpieler, 0, 0, 0)
 		{
+
 		}
 
 		public override Dynamisch.TurmD initialisieren()
