@@ -6,23 +6,23 @@ using System.Drawing;
 
 namespace TDGame.Dynamisch.VerbesserungenTurmD
 {
-    /// <summary>
-    /// Die Dynamische Turmklasse für den Spezialturm mit der Schilderweiterung, welcher mit schildaufbauenden Projektilen feuert.
-    /// </summary>
-    class TurmDSW : TurmD
-    {
-        public TurmDSW(Point neueKoordinaten, Spieler neuSpieler)
-            : base(neueKoordinaten, neuSpieler)
-        {
-        }
+	/// <summary>
+	/// Die Dynamische Turmklasse für den Spezialturm mit der Schilderweiterung, welcher mit schildaufbauenden Projektilen feuert.
+	/// </summary>
+	class TurmDSW : TurmD
+	{
+		public TurmDSW(Point neueKoordinaten, Spieler neuSpieler)
+			: base(neueKoordinaten, neuSpieler)
+		{
+		}
 
-        /// <summary>
-        /// Feuert Schilderzeugende Projektile ab.
-        /// </summary>
-        /// <returns></returns>
-        public override Kugel feuern()
-        {
-            return new Kugel(schaden, vektorX, vektorY, speed, koordinatenMitte.X, koordinatenMitte.Y, spieler, Projektileffekt.schild, kugelBild);
-        }
-    }
+		/// <summary>
+		/// Feuert Schilderzeugende Projektile ab.
+		/// </summary>
+		/// <returns></returns>
+		public override Kugel feuern()
+		{
+			return new Kugel(schaden, vektorX, vektorY, speed, koordinatenMitte.X, koordinatenMitte.Y, spieler, Projektileffekt.schild, kugelBild);
+		}
+	}
 }
